@@ -204,8 +204,37 @@
           </div>
       </div>
 
-      <footer>
-          <p>©2025 LowIQKazuha Network</p>
-      </footer>
+        <footer>
+            <div style="font-size: 14px; color: #888888; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 10px;">
+                <a href="#" onclick="toggleLicenseModal(); return false;" style="text-decoration: none; color: #888888;">许可信息</a>
+            </div>
+            <p>©2025 LowiqKazuha Network</p>
+        </footer>
+        
+        <!-- Modal Overlay -->
+        <div id="license-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center; text-align:left; padding:30px;">
+            <div style="background-color:#1e1e1e; color:#cccccc; padding:20px; border-radius:10px; max-width:800px; width:100%; position:relative;">
+                <button onclick="toggleLicenseModal()" style="position:absolute; top:10px; right:15px; background:none; border:none; color:#cccccc; font-size:20px; cursor:pointer;">×</button>
+                <pre style="white-space: pre-wrap; font-family: inherit;">
+        ## License
+        
+        [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)
+        
+        - You are free to copy, redistribute, remix, transform, and build upon the material for any purpose, even commercially.
+        - You must give appropriate credit and link to the license.
+        - Derivative works must be licensed under identical terms.
+        - No additional restrictions may be applied.
+        
+        You may freely use this content if you preserve the original license notice.
+                </pre>
+            </div>
+        </div>
+        
+        <script>
+            function toggleLicenseModal() {
+                const modal = document.getElementById('license-modal');
+                modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+            }
+        </script>
   </body>
 </html>
