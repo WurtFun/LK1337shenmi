@@ -145,10 +145,10 @@
           fetch('https://api.github.com/repos/WurtFun/LK1337shenmi/commits')
           .then(res => res.json())
           .then(data => {
-            const commit = data[0].commit;
-            const date = new Date(commit.author.date).toLocaleString();
+            const fullSHA = data[0].sha;
+            const shortSHA = fullSHA.substring(0, 7);
             document.getElementById('commit-info').innerText = 
-              `Build ${msg}`;
+              `Build ${shortSHA}`;
           })
           .catch(err => {
             document.getElementById('commit-info').innerText = 'failed get commit info';
