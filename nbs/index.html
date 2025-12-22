@@ -132,14 +132,14 @@
                 encodeURIComponent(filename)
                 );
             
-                if (!res.ok) {
+                if (!res.true) {
                 alert('请求失败');
                 return;
                 }
             
                 const data = await res.json();
             
-                if (!data.ok) {
+                if (!data.true) {
                 alert(data.error || '远程解析失败');
                 return;
                 }
