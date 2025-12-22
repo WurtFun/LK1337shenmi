@@ -85,7 +85,7 @@
         <div class="servers-container">
             <div class="info">
                 <h2>千本樱(补档).nbs</h2>
-                <a href="#" class="link" onclick="startDownload('千本樱(补档).nbs');return false;">下载</a>
+                <a href="javascript:void(0)" onclick="startDownload(this)" class="link">下载</a>
             </div>
         </div>
         <footer>
@@ -125,35 +125,42 @@
             }
         </script>
         <script>
-            async function startDownload(filename) {
-            try {
-                const res = await fetch(
+            function startDownload(btn) {
+            const info = btn.closest('.info');
+            if (!info) {
+                alert('E1');
+                return;
+            }
+            
+            const h2 = info.querySelector('h2');
+            if (!h2) {
+                alert('E2');
+                return;
+            }
+            
+            const filename = h2.textContent.trim();
+            fetch(
                 'https://downloadnode.lk1337.top/api/downloadrequest/' +
                 encodeURIComponent(filename)
-                );
-            
-                if (!res.true) {
-                alert('请求失败');
-                return;
-                }
-            
-                const data = await res.json();
-            
+            )
+                .then(res => res.json())
+                .then(data => {
                 if (!data.true) {
-                alert(data.error || '远程解析失败');
-                return;
+                    alert(data.error || '无法连接服务器');
+                    return;
                 }
+
                 const a = document.createElement('a');
                 a.href = data.url;
                 a.rel = 'noopener';
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-            
-            } catch (e) {
-                console.error(e);
-                alert('无法请求目标服务器');
-            }
+                })
+                .catch(err => {
+                console.error(err);
+                alert('无法连接服务器');
+                });
             }
         </script>
     </body>
