@@ -145,7 +145,7 @@
             )
                 .then(res => res.json())
                 .then(data => {
-                if (!data.true) {
+                if (!data.check) {
                     alert(data.error || '无法连接服务器');
                     return;
                 }
