@@ -3,155 +3,223 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LK1337资源站 - 根目录</title>
-        <meta name="description" content="">
+        <title>SBHypixel资源站 - 根目录</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #2b2b2b;
-                color: #ffffff;
-                text-align: center;
-                padding: 20px;
-            }
-            h1 {
-                color: #4caf50;
-            }
-            .info {
-                background-color: #333333;
-                padding: 15px;
-                border-radius: 8px;
-                display: inline-block;
-                margin: 20px 0;
-                width: 280px;
-            }
-            .info h2 {
-                color: #4caf50;
-            }
-            .link {
-                color: #4caf50;
-                text-decoration: none;
-                font-weight: bold;
-                padding: 10px 20px;
-                border: 2px solid #4caf50;
-                border-radius: 5px;
-                display: inline-block;
-                margin-top: 10px;
-            }
-            .link:hover {
-                background-color: #4caf50;
-                color: #ffffff;
-            }
-            .outside-link {
-                color: #4caf50;
-                text-decoration: none;
-                font-weight: bold;
-                padding: 10px 20px;
-                border: 2px solid #4caf50;
-                border-radius: 5px;
-                display: inline-block;
-                margin-top: 10px;
-            }
-            .outside-link:hover {
-                background-color: #4caf50;
-                color: #ffffff;
-            }
-            .features {
-                margin-top: 40px;
-            }
-            .feature {
-                margin-bottom: 20px;
-            }
-            footer {
-                margin-top: 40px;
-                color: #888888;
-            }
-            .servers-container {
+            html, body {
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
                 display: flex;
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
+                flex-direction: column;
+                font-family: Arial, sans-serif;
+                color: #ffffff;
+                background:
+                    linear-gradient(
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.55)
+                    ),
+                    url("background.jpg");
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                padding-left: 20px;
+                gap: 30px;
+                background: rgba(30,30,30,0.85);
+                border-bottom: 2px solid #4caf50;
+                z-index: 1000;
+            }
+
+            header h1 {
+                margin: 0;
+                color: #4caf50;
+                font-size: 22px;
+            }
+
+
+            main {
+                flex: 1;
+                margin-top: 90px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .category {
+                margin-bottom: 20px;
+                padding: 10px;
+                background: rgba(20,20,20,0.65);
+                border-left: 3px solid #4caf50;
+            }
+
+            .category h2 {
+                margin: 0;
+                padding: 5px;
+                color: #4caf50;
+                cursor: pointer;
+            }
+
+            .category-content {
+                display: none;
+                margin-top: 10px;
+            }
+
+            .file-row {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-bottom: 1px solid rgba(76,175,80,0.3);
+            }
+
+            .file-name {
+                width: 260px;
+            }
+
+            .file-desc {
+                flex: 1;
+            }
+
+            .download {
+                width: 80px;
+                color: #4caf50;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .download:hover {
+                text-decoration: underline;
+            }
+
+            .features {
+                margin-top: 30px;
+            }
+
+            footer {
+                margin-top: auto;
+                padding: 20px 0;
+            }
+
+            #license-modal {
+                display:none;
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                background-color:rgba(0,0,0,0.85);
+                z-index:9999;
+                justify-content:center;
+                align-items:center;
+                text-align:left;
+                padding:30px;
+            }
+            #license-modal .modal-content {
+                background-color:#1e1e1e;
+                color:#cccccc;
+                padding:20px;
+                border-radius:10px;
+                max-width:800px;
+                width:100%;
+                position:relative;
             }
         </style>
     </head>
     <body>
-        <h1>LK1337资源站</h1>
-        <br>
-        <h1>已分类</h1>
-        <div class="servers-container">
-            <div class="info">
-                <h2>shimmernext</h2>
-                <p>Minecraft High Version QOL mod.</p>
-                <a href="https://download.lk1337.top/shimmernext" class="link">jump</a>
+        <header>
+            <h1>SBHypixel</h1>
+        </header>
+        <main>
+            <div class="category" id="category_rel">
+                <h2 onclick="toggleCategory(this)">已分类</h2>
+                <div class="category-content">
+                    <div class="file-row"><div class="file-name">shimmernext</div><div class="file-desc">Minecraft High Version QOL mod.</div><a class="download" href="https://download.lk1337.top/shimmernext">跳转</a></div>
+                    <div class="file-row"><div class="file-name">nbs</div><div class="file-desc">-</div><a class="download" href="https://download.lk1337.top/nbs">跳转</a></div></div>
+                </div>
+            <div class="category" id="category_legacy">
+                <h2 onclick="toggleCategory(this)">杂项</h2>
+                <div class="category-content">
+                    <div class="file-row">
+                        <div class="file-name">LK1337 SkyblockModpack3.zip</div>
+                        <div class="file-desc">-</div>
+                        <a class="download" href="https://downloadnode.lk1337.top/api/download/LK1337%20SkyblockModpack3.zip">下载</a>
+                    </div>  
+                    <div class="file-row">
+                        <div class="file-name">91黄金版无限VIP.apk</div>
+                        <div class="file-desc">-</div>
+                        <a class="download" href="https://downloadnode.lk1337.top/api/download/91%E9%BB%84%E9%87%91%E7%89%88%E6%97%A0%E9%99%90VIP.apk">下载</a>
+                    </div>
+                </div>
             </div>
-            <div class="info">
-                <h2>nbs</h2>
-                <a href="https://download.lk1337.top/nbs" class="link">jump</a>
+            <div class="features">
+                <h2>公告</h2>
+                <div>本站即将迁移，后续更新可进群了解</div>
+                <div>交流\上传群：902833359</div>
             </div>
-        </div>
-        <h1>杂项</h1>
-        <div class="servers-container">
-            <div class="info">
-                <h2>LK1337 SkyblockModpack3.zip (173259.3 KB) </h2>
-                <a href="https://downloadnode.lk1337.top/api/download/LK1337%20SkyblockModpack3.zip" class="link">下载</a>
+        </main>
+        <footer>
+            <div style="font-size:14px;color:#888888;display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:10px;">
+                <a href="#"onclick="toggleLicenseModal();return false;"style="text-decoration:none;color:#888888;">许可信息</a>
             </div>
-            <div class="info">
-                <h2>91黄金版无限VIP.apk (369049.0 KB)</h2>
-                <a href="https://downloadnode.lk1337.top/api/download/91%E9%BB%84%E9%87%91%E7%89%88%E6%97%A0%E9%99%90VIP.apk" class="link">下载</a>
-            </div>
-        </div>
-    
-        <div class="features">
-            <h2>公告</h2>
-            <div class="feature">
-                交流\上传群：902833359
-            </div>
-        </div>
+            <div id="commit-info" style="text-align:center;color:#888888;">数据请求中</div>
+            <p style="text-align:center;color:#888888;">©2026 SBHypixel Network</p>
+        </footer>
 
-            <footer>
-                <div style="font-size: 14px; color: #888888; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 10px;">
-                    <a href="#" onclick="toggleLicenseModal(); return false;" style="text-decoration: none; color: #888888;">许可信息</a>
-                </div>
-                <div id="commit-info">数据请求中</div>
-                <p>©2026 LowiqKazuha Network</p>
-            </footer>
-            
-            <!-- Modal Overlay -->
-            <div id="license-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center; text-align:left; padding:30px;">
-                <div style="background-color:#1e1e1e; color:#cccccc; padding:20px; border-radius:10px; max-width:800px; width:100%; position:relative;">
-                    <button onclick="toggleLicenseModal()" style="position:absolute; top:10px; right:15px; background:none; border:none; color:#cccccc; font-size:20px; cursor:pointer;">×</button>
-                    <pre style="white-space: pre-wrap; font-family: inherit;">
-            ## License
-            
-            [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
-            
-            - You are free to copy, redistribute, remix, transform, and build upon the material for any purpose, even commercially.
-            - You must give appropriate credit and link to the license.
-            - Derivative works must be licensed under identical terms.
-            - No additional restrictions may be applied.
-            
-            You may freely use this content if you preserve the original license notice.
-                    </pre>
-                </div>
+        <div id="license-modal">
+            <div class="modal-content">
+                <button onclick="toggleLicenseModal()"style="position:absolute;top:10px;right:15px;background:none;border:none;color:#cccccc;font-size:20px;cursor:pointer;">×</button>
+                <pre style="white-space:pre-wrap;font-family:inherit;">
+## License
+
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+- You are free to copy, redistribute, remix, transform, and build upon the material for any purpose, even commercially.
+- You must give appropriate credit and link to the license.
+- Derivative works must be licensed under identical terms.
+- No additional restrictions may be applied.
+
+You may freely use this content if you preserve the original license notice.
+                </pre>
             </div>
-            
-            <script>
-                function toggleLicenseModal() {
-                    const modal = document.getElementById('license-modal');
-                    modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
-                }
-            </script>
-            <script>
-            fetch('https://api.github.com/repos/WurtFun/LK1337shenmi/commits')
-            .then(res => res.json())
-            .then(data => {
-                const fullSHA = data[0].sha;
-                const shortSHA = fullSHA.substring(0, 7);
-                document.getElementById('commit-info').innerText = 
-                `Build ${shortSHA}`;
+        </div>
+        <script>
+            function toggleCategory(element){
+                const content = element.nextElementSibling;
+                content.style.display =
+                    content.style.display === "block"
+                    ? "none"
+                    : "block";
+            }
+
+            function toggleLicenseModal(){
+                const modal =
+                    document.getElementById("license-modal");
+                modal.style.display =
+                    modal.style.display === "flex"
+                    ? "none"
+                    : "flex";
+
+            }
+
+            fetch("https://api.github.com/repos/WurtFun/LK1337shenmi/commits")
+            .then(res=>res.json())
+            .then(data=>{
+                const sha =
+                    data[0].sha.substring(0,7);
+                document.getElementById("commit-info").innerText =
+                    `Build ${sha}`;
             })
-            .catch(err => {
-                document.getElementById('commit-info').innerText = 'failed get commit info';
-                console.error(err);
+
+            .catch(()=>{
+                document.getElementById("commit-info").innerText =
+                    "failed get commit info";
             });
         </script>
     </body>
