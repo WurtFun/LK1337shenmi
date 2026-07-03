@@ -17,7 +17,7 @@
                 font-family: Arial, sans-serif;
                 color: #ffffff;
                 background:
-                    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("https://image.lk1337.top/file/AgACAgUAAyEGAAS0anC0AAMNaRDXykO7eXzKcuOnP_SpD0KRum8AAkkMaxtDGYlUayswFfbUcYMBAAMCAAN3AAM2BA.png");
+                    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("https://image.lk1337.top/file/5870c9df283fa5dec963a.jpg");
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
@@ -441,8 +441,6 @@
                 <pre style="white-space:pre-wrap;font-family:inherit;">
 ## License
 
-本站不提供此模组运行时所需的前置资源，请支持原作者
-
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 
 - You are free to copy, redistribute, remix, transform, and build upon the material for any purpose, even commercially.
@@ -475,7 +473,7 @@ You may freely use this content if you preserve the original license notice.
                 fetch('https://downloadnode.lk1337.top/api/downloadrequest/' + encodeURIComponent(filename))
                     .then(res => res.json())
                     .then(data => {
-                        if (!data.check) { alert(data.error || '无法连接服务器'); return; }
+                        if (!data.check) { alert(data.error || '无法连接下载服务器'); return; }
                         const a = document.createElement('a');
                         a.href = data.url;
                         a.rel = 'noopener';
@@ -483,7 +481,7 @@ You may freely use this content if you preserve the original license notice.
                         a.click();
                         document.body.removeChild(a);
                     })
-                    .catch(()=>{ alert('无法连接服务器'); });
+                    .catch(()=>{ alert('无法连接下载服务器'); });
             }
             </script>
             <script>
