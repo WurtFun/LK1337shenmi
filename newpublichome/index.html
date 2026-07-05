@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>/nbs</title>
+        <title>SBHypixel资源站</title>
         <script src="https://unpkg.com/twemoji@14.0.3/dist/twemoji.min.js" integrity="sha384-eoGiwFCoIsUzdZGbvJ/7h/ICofqh5LolgoDnsgdbLptvnpK4+/swGDdkv3sb6bq+" crossorigin="anonymous"></script>
         <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "16655bda9f914fb28d80b47131e05680"}'></script>
         <style>
@@ -16,7 +16,7 @@
                 font-family: Arial, sans-serif;
                 color: #ffffff;
                 background:
-                    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),url("https://image.lk1337.top/file/5870c9df283fa5dec963a.jpg");
+                    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("https://image.lk1337.top/file/5870c9df283fa5dec963a.jpg");
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
@@ -42,6 +42,7 @@
                 color: #4caf50;
                 font-size: 22px;
             }
+
 
             main {
                 flex: 1;
@@ -102,9 +103,8 @@
             footer {
                 margin-top: auto;
                 padding: 20px 0;
-                color: #888888;
             }
-            
+
             .footer_a{
                 text-decoration: none;
             }
@@ -126,7 +126,6 @@
                 text-align:left;
                 padding:30px;
             }
-
             #license-modal .modal-content {
                 background-color:#1e1e1e;
                 color:#cccccc;
@@ -136,46 +135,49 @@
                 width:100%;
                 position:relative;
             }
-
-            .servers-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                margin-top: 10px;
-            }
-
-            .info {
-                background-color: rgba(30,30,30,0.75);
-                padding: 10px;
-                border-radius: 6px;
-                min-width: 180px;
-                text-align: center;
-            }
         </style>
     </head>
     <body>
         <header>
-            <h1>SBHypixel Network/nbs</h1>
+            <h1>SBHypixel Network</h1>
         </header>
         <main>
-            <div class="category" id="category_root">
-                <h2 onclick="toggleCategory(this)">返回根目录</h2>
-                <div class="category-content" style="display:block;">
-                    <div class="file-row"><div class="file-name">/</div>
-                    <div class="file-desc">-</div>
-                    <a class="download" href="https://sbhypixel.net/">跳转</a></div>
-                </div>
-            </div>
-
-            <div class="category" id="category1">
-                <h2 onclick="toggleCategory(this)">归类</h2>
+            <div class="category" id="category_rel">
+                <h2 onclick="toggleCategory(this)">已分类</h2>
                 <div class="category-content">
-                    <div class="file-row"><div class="file-name">千本樱(补档).nbs</div>
-                    <div class="file-desc">-</div>
-                    <a class="download" href="javascript:void(0)" onclick="startDownload(this)">下载</a></div>
+                    <div class="file-row"><div class="file-name">shimmernext</div><div class="file-desc">Minecraft High Version QOL mod.</div><a class="download" href="https://sbhypixel.net/download/shimmernext">跳转</a></div>
+                    <div class="file-row"><div class="file-name">nbs</div><div class="file-desc">-</div><a class="download" href="https://sbhypixel.net/download/nbs">跳转</a></div></div>
+                </div>
+            <div class="category" id="category_legacy">
+                <h2 onclick="toggleCategory(this)">杂项</h2>
+                <div class="category-content">
+                    <div class="file-row">
+                        <div class="file-name">MITE-ITE-GA1.6.1-patched.zip</div>
+                        <div class="file-desc">-</div>
+                        <a class="download" href="https://downloadnode.lk1337.top/api/download/MITE-ITE-GA1.6.1-patched.zip">下载</a>
+                    </div>
+                    <div class="file-row">
+                        <div class="file-name">猪神材质包.zip</div>
+                        <div class="file-desc">黑卡哥美声</div>
+                        <a class="download" href="https://downloadnode.lk1337.top/api/download/%E7%8C%AA%E7%A5%9E%E6%9D%90%E8%B4%A8%E5%8C%85.zip">下载</a>
+                    </div>
+                    <div class="file-row">
+                        <div class="file-name">mcv-1.0.0-shaded.jar</div>
+                        <div class="file-desc">使用方法：<a style="color: #ffffff;" href="https://www.bilibili.com/video/BV1nWDtBME8a">https://www.bilibili.com/video/BV1nWDtBME8a</a></div>
+                        <a class="download" href="https://downloadnode.lk1337.top/api/download/mcv-1.0.0-shaded.jar">下载</a>
+                    </div>
+                    <div class="file-row">
+                        <div class="file-name">91黄金版无限VIP.apk</div>
+                        <div class="file-desc">-</div>
+                        <a class="download" href="https://downloadnode.lk1337.top/api/download/91%E9%BB%84%E9%87%91%E7%89%88%E6%97%A0%E9%99%90VIP.apk">下载</a>
+                    </div>
                 </div>
             </div>
-
+            <div class="features">
+                <h2>公告</h2>
+                <div>本站即将迁移，后续更新可进群了解</div>
+                <div>交流\上传文件添加qq群：902833359</div>
+            </div>
         </main>
         <footer>
             <div style="font-size:14px;color:#888888;display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:10px;">
@@ -192,7 +194,7 @@
 
         <div id="license-modal">
             <div class="modal-content">
-                <button onclick="toggleLicenseModal()" style="position:absolute;top:10px;right:15px;background:none;border:none;color:#cccccc;font-size:20px;cursor:pointer;">×</button>
+                <button onclick="toggleLicenseModal()"style="position:absolute;top:10px;right:15px;background:none;border:none;color:#cccccc;font-size:20px;cursor:pointer;">×</button>
                 <pre style="white-space:pre-wrap;font-family:inherit;">
 ## License
 
@@ -204,49 +206,41 @@
 - No additional restrictions may be applied.
 
 You may freely use this content if you preserve the original license notice.
-        </pre>
+                </pre>
             </div>
         </div>
-
         <script>
             function toggleCategory(element){
                 const content = element.nextElementSibling;
                 content.style.display =
-                    content.style.display === "block" ? "none" : "block";
+                    content.style.display === "block"
+                    ? "none"
+                    : "block";
             }
 
             function toggleLicenseModal(){
-                const modal = document.getElementById("license-modal");
+                const modal =
+                    document.getElementById("license-modal");
                 modal.style.display =
-                    modal.style.display === "flex" ? "none" : "flex";
+                    modal.style.display === "flex"
+                    ? "none"
+                    : "flex";
+
             }
 
-            function startDownload(btn) {
-                const info = btn.closest('.file-row');
-                if (!info) return;
-                const filename = info.querySelector('.file-name').textContent.trim();
-                fetch('https://downloadnode.lk1337.top/api/downloadrequest/' + encodeURIComponent(filename))
-                    .then(res => res.json())
-                    .then(data => {
-                        if (!data.check) { alert(data.error || '无法连接下载服务器'); return; }
-                        const a = document.createElement('a');
-                        a.href = data.url;
-                        a.rel = 'noopener';
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                    })
-                    .catch(()=>{ alert('无法连接下载服务器'); });
-            }
-            </script>
-            <script>
             fetch("https://api.github.com/repos/WurtFun/LK1337shenmi/commits")
             .then(res=>res.json())
             .then(data=>{
-                const sha = data[0].sha.substring(0,7);
-                document.getElementById("commit-info").innerText = `Build ${sha}`;
+                const sha =
+                    data[0].sha.substring(0,7);
+                document.getElementById("commit-info").innerText =
+                    `Build ${sha}`;
             })
-            .catch(()=>{ document.getElementById("commit-info").innerText = "failed get commit info"; });
+
+            .catch(()=>{
+                document.getElementById("commit-info").innerText =
+                    "failed get commit info";
+            });
         </script>
     </body>
 </html>
