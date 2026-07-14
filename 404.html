@@ -168,12 +168,8 @@
             </div>
 
             <div class="category" id="category1">
-                <h2 onclick="toggleCategory(this)">归类</h2>
-                <div class="category-content">
-                    <div class="file-row"><div class="file-name">cookedchicken skyblock modpacks 1.0.1.mrpack</div>
-                    <div class="file-desc">不建议切换图形API</div>
-                    <a class="download" href="javascript:void(0)" onclick="startDownload(this)">下载</a></div>
-                </div>
+                <h2 onclick="toggleCategory(this)">404 Not Found</h2>
+                <div class="category-content"></div>
             </div>
 
         </main>
@@ -219,24 +215,6 @@ You may freely use this content if you preserve the original license notice.
                 const modal = document.getElementById("license-modal");
                 modal.style.display =
                     modal.style.display === "flex" ? "none" : "flex";
-            }
-
-            function startDownload(btn) {
-                const info = btn.closest('.file-row');
-                if (!info) return;
-                const filename = info.querySelector('.file-name').textContent.trim();
-                fetch('https://downloadnode.lk1337.top/api/downloadrequest/' + encodeURIComponent(filename))
-                    .then(res => res.json())
-                    .then(data => {
-                        if (!data.check) { alert(data.error || '无法连接下载服务器'); return; }
-                        const a = document.createElement('a');
-                        a.href = data.url;
-                        a.rel = 'noopener';
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                    })
-                    .catch(()=>{ alert('无法连接下载服务器'); });
             }
             </script>
             <script>
